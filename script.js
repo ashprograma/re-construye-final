@@ -79,7 +79,7 @@ function guardarPerfil() {
 const materiales = [
   {
     id: 1,
-    imagen: "tejas nuevas.png",
+    imagen: "Tejas nuevas.png",
     descripcion: "20 Tejas nuevas",
     estado: "nuevo",
     precio: "$100.000"
