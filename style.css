@@ -1,0 +1,478 @@
+body {
+  background-image: url('Logo.jpeg'); /* reemplaza con el nombre real */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain; /* o "cover" si prefieres que llene toda el área */
+  background-attachment: fixed;
+  background-color: rgb(255, 253, 244); /* color de respaldo si el logo no cubre todo */
+}
+
+header {
+  background-color: #2e7d32;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  background-color: #1b5e20;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu li:hover {
+  background-color: #43a047;
+}
+
+main {
+  padding: 2rem;
+}
+
+.seccion {
+  display: none;
+}
+
+.seccion.activa {
+  display: block;
+}
+
+/* Estilos para la página de inicio */
+#inicio {
+  display: block;
+  background: linear-gradient(to right, rgba(255, 253, 244, 0.868));
+  padding: 3rem;
+  text-align: justify;
+  color: #2e7d32;
+}
+
+#inicio h1 {
+  font-size: 2.5rem;
+}
+
+#inicio p {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  text-align: justify;
+  color: #4e944f;
+}
+
+/* Formulario de publicación */
+.formulario-publicacion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color:rgba(255, 253, 244, 0.868);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 600px;
+  margin: auto;
+}
+
+.formulario-publicacion input,
+.formulario-publicacion textarea,
+.formulario-publicacion select,
+.formulario-publicacion button {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+}
+
+.formulario-publicacion button {
+  background-color: #66bb6a;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario-publicacion button:hover {
+  background-color: #388e3c;
+}
+.contenedor-materiales {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.tarjeta-material {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 220px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: justify;
+  transition: transform 0.3s;
+}
+
+.tarjeta-material:hover {
+  transform: scale(1.03);
+}
+
+.tarjeta-material img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+#filtro-estado {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 1.5rem;
+}
+.chat-container {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chat-box {
+  max-width: 600px;
+  margin: auto;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  padding: 1rem;
+  height: 350px;
+  overflow-y: auto;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mensaje {
+  padding: 0.6rem 1rem;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.mensaje.usuario {
+  background-color: #d1e7dd;
+  align-self: flex-end;
+}
+
+.mensaje.vendedor {
+  background-color: #e2e3e5;
+  align-self: flex-start;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 253, 244, 0.868)  ;
+}
+
+.chat-input button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  background-color: #45a049;
+}
+.perfil-container {
+  max-width: 500px;
+  margin: auto;
+  background-color: #f2f2f2;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 253, 244, 0.868);
+}
+
+.perfil-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.perfil-container label {
+  margin-top: 1rem;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.perfil-container input {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 253, 244, 0.868);
+}
+
+.perfil-container button {
+  margin-top: 1.5rem;
+  padding: 0.6rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.perfil-container button:hover {
+  background-color: #0056b3;
+}
+.materiales-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: center;
+}
+
+.material-card {
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.material-card img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 0.8rem;
+}
+
+.material-card button {
+  margin-top: 0.8rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.material-card button:hover {
+  background-color: #218838;
+}
+/* Aseguramos que html y body ocupen toda la altura disponible */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* viewport height - asegura que tome al menos toda la altura visible */
+}
+
+/* El contenido principal debe crecer y ocupar el espacio disponible */
+.main-content {
+  flex: 1; /* Hace que este elemento crezca y ocupe todo el espacio disponible */
+}
+
+/* Footer siempre al final */
+.site-footer {
+  text-align: center;
+  padding: 0.3px 0.1px;
+  background-color: #2E7D32;
+  color: #ffffff;
+  font-size: 1.1rem;
+  width: 100%;
+  margin-top: auto; /* Empuja el footer al final cuando hay espacio */
+}
+/* Configuración global de fuentes */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif; /* Establece Arial como fuente principal */
+  line-height: 1.6;
+  color: #2E7D32;
+  background-color: rgba(255, 253, 244, 0.868);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh; /* Asegura que el cuerpo ocupe al menos toda la altura de la ventana */
+  display: flex;
+  flex-direction: column; /* Organiza los elementos en columna */
+}
+
+/* Estilos para encabezados con la misma fuente */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Arial', sans-serif;
+  margin-bottom: 1rem;
+}
+
+/* Para que el contenido principal ocupe el espacio disponible */
+main {
+  flex: 1; /* Hace que el main ocupe todo el espacio disponible */
+}
+
+/* Mantén el estilo actual de tu footer y asegúrate de que use la misma fuente */
+.site-footer {
+  text-align: center;
+  padding: 8px 10px;
+  background-color: #2E7D32;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-family: 'Arial', sans-serif;
+  width: 100%;
+  margin-top: auto; /* Empuja el footer al final */
+}
+
+.inicio-section {
+  padding: 60px 20px;
+}
+
+.inicio-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inicio-texto {
+  flex: 1 1 50%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.inicio-imagen {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.inicio-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+
+.surgimos-container {
+  padding: 60px 20px;
+}
+
+.surgimos-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.surgimos-texto {
+  flex: 1 1 50%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.surgimos-imagen {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: left;
+  padding: 40px;
+}
+
+.surgimos-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+
+
+.compromiso-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.compromiso-texto {
+  flex: 1 1 50%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.compromiso-imagen {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.compromiso-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+
+.cambio-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cambio-texto {
+  flex: 1 1 50%;
+  padding: 20px;
+  text-align: justify;
+}
+
+.cambio-imagen {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+
+.cambio-imagen img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+
+.inicio-texto,
+.surgimos-texto,
+.compromiso-texto,
+.cambio-texto {
+  background-color: rgba(255, 253, 244, 0.85); /* #FFFDF4 con opacidad */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+}

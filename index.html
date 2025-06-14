@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RE-CONSTRUYE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>RE-CONSTRUYE</h1>
+    <nav>
+      <ul class="menu">
+        <li onclick="mostrarSeccion('inicio')">Inicio</li>
+        <li onclick="mostrarSeccion('publicar')">Publicar Material</li>
+        <li onclick="mostrarSeccion('buscar')">Buscar Material</li>
+        <li onclick="mostrarSeccion('chat')">Chat</li>
+        <li onclick="mostrarSeccion('perfil')">Mi Perfil</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="seccion activa">
+      <div class="inicio-container">
+        <div class="inicio-texto">
+        <h2>Nuestra Misión</h2>
+        <p>En <strong>RE-CONSTRUYE</strong> transformamos la industria de la construcción en Colombia a través de soluciones tecnológicas sostenibles que promueven la economía circular. Nuestra misión es conectar de forma eficiente a constructoras, arquitectos, inmobiliarias, recicladores y proveedores en una plataforma digital inteligente que permite la compra, venta e intercambio de materiales sobrantes, reduciendo el desperdicio y generando valor ambiental, social y económico. Apostamos por una construcción más consciente, colaborativa y responsable con el futuro del planeta.</p>
+      </div>
+      <div class="inicio-imagen">
+      <img src="Amigos.jpg" alt="Construcción RE-CONSTRUYE">
+    </div>
+  </div>
+    </section>
+     
+  
+  <section id="surgimos" class="seccion activa">
+      <div class="surgimos-container">
+         <div class="surgimos-imagen">
+      <img src="Mamá e hija.jpeg" alt="Cómo surgimos" />
+  </div>
+        <div class="surgimos-texto">
+        <h2>¿Cómo surgimos?</h2>
+        <p>La idea de RE-CONSTRUYE nació a partir de una experiencia personal de una de nuestras fundadoras, quien, al finalizar la construcción de su vivienda, se enfrentó al desafío de gestionar adecuadamente los materiales sobrantes, tales como tejas, ladrillos, arena, cemento y herramientas parcialmente utilizadas. Al consultar en una ferretería local sobre la posibilidad de venderlos, se le informó que, al haber sido abiertos o usados, estos materiales no podían ser revendidos a través de los canales tradicionales. Esta limitación evidenció una necesidad latente en el sector: la falta de un sistema eficiente y confiable para reutilizar y redistribuir excedentes de obra. A partir de esta situación, surgió la iniciativa de crear una plataforma digital que facilitara la comercialización de estos materiales, dando origen a RE-CONSTRUYE, una solución PropTech enfocada en la innovación sostenible y la economía circular en la industria de la construcción.</p>
+      </div>
+  </div>
+     </section>   
+    
+      <section id="compromiso" class="seccion activa">
+      <div class="compromiso-container">
+        <div class="compromiso-texto">
+        <h2>Nuestro Compromiso</h2>
+        <p>En RE-CONSTRUYE estamos comprometidos con la transformación sostenible del sector de la construcción en Colombia. Promovemos activamente la economía circular mediante el uso de tecnologías digitales que permiten aprovechar al máximo los materiales sobrantes de obras y remodelaciones. Nuestro objetivo es reducir el desperdicio, optimizar recursos y generar un impacto positivo en el medio ambiente, al tiempo que fortalecemos redes de colaboración entre actores clave del ecosistema constructor.</p>
+      </div>
+      <div class="compromiso-imagen">
+      <img src="Obreros con sostenibilidad.jpeg" alt="compromiso" />
+  </div>
+  </div>
+    </section>
+
+      <section id="cambio" class="seccion activa">
+      <div class="cambio-container">
+        <div class="cambio-imagen">
+      <img src="obreros varios.jpg" alt="cambio" />
+  </div>
+        <div class="cambio-texto">
+        <h2>Únete al cambio</h2>
+        <p>Ser parte de RE-CONSTRUYE es contribuir a un modelo de construcción más eficiente, consciente y respetuoso con el planeta. Te invitamos a formar parte de nuestra comunidad de cambio: constructores, arquitectos, recicladores, ferreteros y ciudadanos que creen en un futuro donde cada material cuenta. Súmate a la revolución de la construcción sostenible y digital. <strong>¡Juntos construimos el mañana, sin desperdiciar el hoy!</strong></p>
+      </div>  
+  </div>
+    </section>  
+      
+    <section id="publicar" class="seccion">
+      <h2>Publicar Excedente de Construcción</h2>
+    
+      <form class="formulario-publicacion">
+        <label for="foto">Foto del Material</label>
+        <input type="file" id="foto" accept="image/*">
+    
+        <label for="descripcion">Descripción General</label>
+        <textarea id="descripcion" placeholder="Ej: Ladrillos rojos en buen estado..." rows="4"></textarea>
+    
+        <label for="estado">Estado del Material</label>
+        <select id="estado">
+          <option value="">Seleccione</option>
+          <option value="nuevo">Nuevo</option>
+          <option value="usado_buen">Usado - Buen estado</option>
+          <option value="usado_regular">Usado - Regular</option>
+        </select>
+    
+        <label for="precio">Precio (COP)</label>
+        <input type="number" id="precio" placeholder="Ej: 50000">
+    
+        <button type="button" onclick="enviarPublicacion()">Publicar</button>
+      </form>
+    </section>
+    <section id="buscar" class="seccion" style="display: none;">
+      <h2>Buscar Material</h2>
+    
+      <label for="filtro">Filtrar por estado:</label>
+      <select id="filtro" onchange="filtrarMateriales()">
+        <option value="todos">Todos</option>
+        <option value="nuevo">Nuevo</option>
+        <option value="usado-buen">Usado - Buen estado</option>
+        <option value="usado-regular">Usado - Regular</option>
+      </select>
+    
+      <div id="lista-materiales" class="materiales-container">
+        <!-- Tarjetas de materiales -->
+      </div>
+    </section>
+       
+        </section>        
+        <section id="chat" class="seccion" style="display: none;">
+          <h2>Chat con el Vendedor</h2>
+        
+          <div class="chat-container">
+            <div class="chat-box" id="chat-box">
+              <div class="mensaje vendedor">Hola, ¿en qué puedo ayudarte?</div>
+            </div>
+        
+            <div class="chat-input">
+              <input type="text" id="mensaje" placeholder="Escribe tu mensaje aquí..." />
+              <button onclick="enviarMensaje()">Enviar</button>
+            </div>
+          </div>
+        </section>
+        <section id="perfil" class="seccion" style="display: none;">
+          <h2>Mi Perfil</h2>
+          <div class="perfil-container">
+            <form id="form-perfil">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" placeholder="Tu nombre completo">
+        
+              <label for="correo">Correo electrónico:</label>
+              <input type="email" id="correo" placeholder="tucorreo@ejemplo.com">
+        
+              <label for="ubicacion">Ubicación:</label>
+              <input type="text" id="ubicacion" placeholder="Ciudad, Departamento">
+        
+              <label for="telefono">Teléfono:</label>
+              <input type="text" id="telefono" placeholder="Tu número de contacto">
+        
+              <button type="button" onclick="guardarPerfil()">Guardar Cambios</button>
+            </form>
+        
+            <div id="perfil-guardado" style="display:none; margin-top: 1rem;">
+              <h3>Información guardada:</h3>
+              <p><strong>Nombre:</strong> <span id="ver-nombre"></span></p>
+              <p><strong>Correo:</strong> <span id="ver-correo"></span></p>
+              <p><strong>Ubicación:</strong> <span id="ver-ubicacion"></span></p>
+              <p><strong>Teléfono:</strong> <span id="ver-telefono"></span></p>
+            </div>
+          </div>
+        </section>
+         </main>
+  <script src="script.js"></script>
+  <footer class="site-footer">
+    <p>&copy; 2025 RE-CONSTRUYE. Todos los derechos reservados.</p>
+  </footer>  
+</body>
+</html>
